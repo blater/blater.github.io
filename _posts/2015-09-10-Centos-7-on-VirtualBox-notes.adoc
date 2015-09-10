@@ -1,11 +1,11 @@
 = Centos 7 on VirtualBox notes
 
 Update base install and Add development libraries to allow virtualbox guest utils to install
-* yum update
-* yum groupinstall "Development tools"
-* yum install kernel-devel
-* yum install kernel-devel-3.10.0-229.el7.x86_64  (following error message from VBosLinuxAdditions.run)
-* reboot
+- yum update
+- yum groupinstall "Development tools"
+- yum install kernel-devel
+- yum install kernel-devel-3.10.0-229.el7.x86_64  (following error message from VBosLinuxAdditions.run)
+- reboot
   
 
 Install virtualbox additions
