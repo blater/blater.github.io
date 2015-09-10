@@ -1,45 +1,36 @@
-= Centos 7 on VirtualBox notes
+= Centos 7 developer workstation on VirtualBox notes
 
 
-A quick twitter poll uncovered a number of other excellent solutions to
-reduce your wallet bloat:
+#### Update base install and Add development libraries 
+This is to allow virtualbox guest utils to install:
 
-- Buying lunch with EFTPOS; you aren't going to return your sandwich,
-  so you don't need a receipt.
-- Buying fuel from the petrol station; the fuel is in your car, you
-  can't return it.
-- Printing out online movie tickets; just make a calendar appointment
-  in your phone for the movie time and date, and put the reference
-  number in the appointment as well.
-- Receipts for Taxation purposes; in Australia, the ATO only requires
-  a bank statement for taxation http://law.ato.gov.au/atolaw/view.htm?docid=PSR/PS20057/NAT/ATO/00001[proof of purchase].
-- Receipts for warranty purposes: scan them and digitally file them in DropBox, Copy, or Google Drive. I guarantee they will be easier to find digitally than rifling through a paper-based system. And they won't fade!
-
-
-
-Update base install and Add development libraries to allow virtualbox guest utils to install
 - yum update
 - yum groupinstall "Development tools"
 - yum install kernel-devel
 - yum install kernel-devel-3.10.0-229.el7.x86_64  (following error message from VBosLinuxAdditions.run)
 - reboot
-  
 
-Install virtualbox additions
+&nbsp;
+
+#### Install virtualbox additions
+
 - mount the VBOXADDITIONS cd through the virtual box devices menu
 - cd /run/media/<username>/VBOXADDITIONS_*
 - ./VBoxLinuxAdditions.run
 
+&nbsp;
 
-Setup eclipse
+#### Setup eclipse
 - download from eclipse.org
 - gunzip and tar xf the file, creates "eclipse" folder holding installation.
 - move eclipse to /usr/local
 - create a gnome desktop menu entry by editing /usr/share/applications/eclipse.desktop
     add the following text...
+
+&nbsp;
+
      
-     
-Bringing sanity to gnome
+#### Bring sanity to gnome
 - Hack the gnome css, because gnome ships with some bad defaults but allows very little customization via the gui.
 Create ~/.config/gtk-3.0/gtk.css to override the defaults...
 
