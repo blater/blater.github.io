@@ -1,3 +1,40 @@
 = Mytitle
 
-content
+Update base install and Add development libraries to allow virtualbox guest utils to install
+- yum update
+- yum groupinstall "Development tools"
+- yum install kernel-devel
+- yum install kernel-devel-3.10.0-229.el7.x86_64  (following error message from VBosLinuxAdditions.run)
+- reboot
+
+
+Install virtualbox additions
+- mount the VBOXADDITIONS cd through the virtual box devices menu
+- cd /run/media/<username>/VBOXADDITIONS_*
+- ./VBoxLinuxAdditions.run
+
+
+Setup eclipse
+- download from eclipse.org
+- gunzip and tar xf the file, creates "eclipse" folder holding installation.
+- move eclipse to /usr/local
+- create a gnome desktop menu entry by editing /usr/share/applications/eclipse.desktop
+    add the following text...
+     
+     
+Bringing sanity to gnome
+- Hack the gnome css, because gnome ships with some bad defaults but allows very little customization via the gui.
+Create ~/.config/gtk-3.0/gtk.css to override the defaults...
+
+  .header-bar.default-decoration {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+  .header-bar.default-decoration .button.titlebutton {
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+
+     
+     
