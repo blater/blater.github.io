@@ -1,5 +1,22 @@
 = Centos 7 on VirtualBox notes
 
+
+A quick twitter poll uncovered a number of other excellent solutions to
+reduce your wallet bloat:
+
+- Buying lunch with EFTPOS; you aren't going to return your sandwich,
+  so you don't need a receipt.
+- Buying fuel from the petrol station; the fuel is in your car, you
+  can't return it.
+- Printing out online movie tickets; just make a calendar appointment
+  in your phone for the movie time and date, and put the reference
+  number in the appointment as well.
+- Receipts for Taxation purposes; in Australia, the ATO only requires
+  a bank statement for taxation http://law.ato.gov.au/atolaw/view.htm?docid=PSR/PS20057/NAT/ATO/00001[proof of purchase].
+- Receipts for warranty purposes: scan them and digitally file them in DropBox, Copy, or Google Drive. I guarantee they will be easier to find digitally than rifling through a paper-based system. And they won't fade!
+
+
+
 Update base install and Add development libraries to allow virtualbox guest utils to install
 - yum update
 - yum groupinstall "Development tools"
