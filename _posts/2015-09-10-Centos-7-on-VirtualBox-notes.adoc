@@ -6,7 +6,7 @@ Update base install and Add development libraries to allow virtualbox guest util
 - yum install kernel-devel
 - yum install kernel-devel-3.10.0-229.el7.x86_64  (following error message from VBosLinuxAdditions.run)
 - reboot
-
+  
 
 Install virtualbox additions
 - mount the VBOXADDITIONS cd through the virtual box devices menu
