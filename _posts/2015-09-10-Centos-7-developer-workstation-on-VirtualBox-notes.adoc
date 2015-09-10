@@ -15,7 +15,8 @@ This is to allow virtualbox guest utils to install:
 #### Install virtualbox additions
 
 - mount the VBOXADDITIONS cd through the virtual box devices menu
-- cd /run/media/<username>/VBOXADDITIONS_*
+- cd /mnt; mkdir cdrom; mount /dev/cdrom /mnt/cdrom
+- cd /mnt/cdrom
 - ./VBoxLinuxAdditions.run
 
 &nbsp;
