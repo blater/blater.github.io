@@ -44,6 +44,14 @@ Create ~/.config/gtk-3.0/gtk.css to override the defaults...
     padding-bottom: 2px;
   }
 
+#### The SELinux problem
+   Sympton: get a 403 error from web pages on localhost.
+   Apache log in /var/logs/httpd says "Permission denied:... file permissions deny server access: /var/www/index.html" 
+   The file permissions all the way down to index.html are completely open.
 
+The problem: SELinux is enabled by default.  Dont want this on a single user locally hosted development VM.
+Fix: 
+   $ sudo setenforce 0
+     now switch off selinux bye editing /etc/sysconfig/selinux.  alter the line "SELINUX=enforcing" to "SELINUX=disabled"
      
      
