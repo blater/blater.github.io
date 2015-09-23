@@ -45,13 +45,23 @@ Create ~/.config/gtk-3.0/gtk.css to override the defaults...
   }
 
 #### The SELinux problem
-   Sympton: get a 403 error from web pages on localhost.
+   Symptom: get a 403 error from web pages on localhost.
    Apache log in /var/logs/httpd says "Permission denied:... file permissions deny server access: /var/www/index.html" 
    The file permissions all the way down to index.html are completely open.
 
-The problem: SELinux is enabled by default.  Dont want this on a single user locally hosted development VM.
-Fix: 
+The Cause: SELinux is enabled by default.  Dont want this on a single user locally hosted development VM.
+The Fix: 
    $ sudo setenforce 0
      now switch off selinux bye editing /etc/sysconfig/selinux.  alter the line "SELINUX=enforcing" to "SELINUX=disabled"
      
      
+#### The network don't work
+    Symptom: Can access the internet from the VM, but the host machine can't access the VM.  
+    Cannot connect via ssh, cannot connect to the running apache server from the host, but can locally.
+    
+ The Cause: Oracle Virtual Box networking doesn't work by default. By "work" I mean two way connection between host and guest does not work unless you know what you're doing, but I prefer things to work even when I have no clue.
+ I have setup networking with one adapter set to NAT. This allows internet connection for the guest VM, so centos could use yum.
+ 
+The Fix: configure a "Host only network", add that as a second "Host only adapter" to the VM in the virtualbox settings.
+To add the host-only-network, shutdown the VM, goto "File/Preferences" in the virtualbox manager gui.  Click Network, click the Host Only Networks tab, Click the "add host only network" icon (the dark green "circuit board" with plus sign). 
+Now edit it (click the spatula type icon).  set the IPv4 address to something like "192.168.56.1" and network mask to 255.255.255.0, now Enable the dhcp server, add server address 192.168.56.100, server mask 255.255.255.0
